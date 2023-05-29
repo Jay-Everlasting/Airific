@@ -1,0 +1,70 @@
+CREATE TABLE AIRIFIC
+---------------------------------------------------------------------
+
+CREATE TABLE utenti (
+    id int auto_increment,
+    nome varchar(20) not null,
+    cognome varchar(20) not null,
+    dataN date,
+    telefono varchar(15),
+    dataAcc date not null default (curdate()),
+/* dataAcc date not null default CURRENT_TIMESTAMP, <-- other solution*/
+    nSensoriAcquistati int not null default 0,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE autentificazioni (
+    email varchar(20),
+    pswd varchar(50),
+    id_utente int,
+    PRIMARY KEY (email, pswd),
+    FOREIGN KEY (id_utente) REFERENCES utenti(id)
+);
+
+CREATE TABLE sensori (
+    mac char(17),
+    annoSerie YEAR(4),
+    stato BIT default null,
+    statoTm BIT default null,
+    statoQA BIT default null,
+    statoTime BIT default null,
+    indirizzoIp varchar(15) default null,
+    id_utente int,
+    PRIMARY KEY (mac),
+    FOREIGN KEY (id_utente) REFERENCES utenti(id)
+);
+
+CREATE TABLE ambienti (
+    nome varchar(15),
+    PRIMARY KEY (nome)
+);
+
+CREATE TABLE stanze (
+    id int,
+    nome varchar(15) NOT NULL,
+    immagine varchar(100) NOT NULL,
+    iconArt varchar(100) NOT NULL,
+    id_ambiente varchar(15),
+    id_utente int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_ambiente) REFERENCES ambienti(nome),
+    FOREIGN KEY (id_utente) REFERENCES utenti(id)
+);
+
+CREATE TABLE analisi (
+    id int,
+    temperatura decimal(9,1) NOT NULL,
+    umidita decimal(9,1) NOT NULL,
+    co decimal(9,2) NOT NULL,
+    co2 decimal(9,2) NOT NULL,
+    toluen decimal(9,2) NOT NULL,
+    ammonio decimal(9,2) NOT NULL,
+    acetone decimal(9,2) NOT NULL,
+    dataA DATE NOT NULL,
+    timeA TIME NOT NULL,
+    id_sensore char(17),
+    id_stanza int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_sensore) REFERENCES sensori(mac),
+    FOREIGN KEY (id_stanza) REFERENCES stanze(id)
+);

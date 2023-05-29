@@ -1,0 +1,5 @@
+ip     : sql7.freemysqlhosting.net
+user   : slq7620502
+psw    : dk5J1D9Ckh
+port   : 3306
+schema : slq7620502
