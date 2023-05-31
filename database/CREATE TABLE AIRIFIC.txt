@@ -3,18 +3,17 @@ CREATE TABLE AIRIFIC
 
 CREATE TABLE utenti (
     id int auto_increment,
-    nome varchar(20) not null,
-    cognome varchar(20) not null,
+    nome varchar(30) not null,
+    cognome varchar(30) not null,
     dataN date,
-    telefono varchar(15),
+    telefono char(15),
     dataAcc date not null default (curdate()),
-/* dataAcc date not null default CURRENT_TIMESTAMP, <-- other solution*/
     nSensoriAcquistati int not null default 0,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE autentificazioni (
-    email varchar(20),
+    email varchar(80),
     pswd varchar(50),
     id_utente int,
     PRIMARY KEY (email, pswd),
@@ -23,7 +22,7 @@ CREATE TABLE autentificazioni (
 
 CREATE TABLE sensori (
     mac char(17),
-    annoSerie YEAR(4),
+    annoSerie YEAR,
     stato BIT default null,
     statoTm BIT default null,
     statoQA BIT default null,
@@ -36,11 +35,13 @@ CREATE TABLE sensori (
 
 CREATE TABLE ambienti (
     nome varchar(15),
-    PRIMARY KEY (nome)
+    id_utenti int,
+    PRIMARY KEY (nome, id_utenti),
+    FOREIGN KEY (id_utenti) REFERENCES utenti(id)
 );
 
 CREATE TABLE stanze (
-    id int,
+    id int auto_increment,
     nome varchar(15) NOT NULL,
     immagine varchar(100) NOT NULL,
     iconArt varchar(100) NOT NULL,
@@ -52,7 +53,7 @@ CREATE TABLE stanze (
 );
 
 CREATE TABLE analisi (
-    id int,
+    id int auto_increment,
     temperatura decimal(9,1) NOT NULL,
     umidita decimal(9,1) NOT NULL,
     co decimal(9,2) NOT NULL,
