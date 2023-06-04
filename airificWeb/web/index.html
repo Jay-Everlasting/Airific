@@ -4,51 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Airific🌬️ - Homepage</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
-    <header>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"
-          />
-        </svg>
+    <header class="header">
+      <div class="menu-element">
+        <ion-icon class="menu-icon" name="bar-chart-outline"></ion-icon>
       </div>
-      <div>
-        <h2>AIRIFC</h2>
-        <div></div>
-        <div></div>
+      <div class="menu-element menu-titolo">
+        <h1 class="titolo">AIRIFC</h1>
+        <div class="l l1"></div>
+        <div class="l l2"></div>
       </div>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-        </svg>
+      <div class="menu-element">
+        <ion-icon class="menu-icon" name="person-circle-outline"></ion-icon>
       </div>
     </header>
-    <main>
-      <section>
-        <div>
+    <main class="">
+      <section class="home">
+        <div class="home-element">
           <h1>Respira</h1>
           <p>
             Visualizza grafici personalizzati e scopri la qualità dell'aria nel
@@ -59,9 +43,11 @@
             <a href="#">Documentazione</a>
           </div>
         </div>
-        <div>
-          <img src="img/web-img/plants.jpg" alt="Immagine piante verde" />
-        </div>
+        <img
+          class="home-img"
+          src="img/web-img/plants.jpg"
+          alt="Immagine piante verde"
+        />
       </section>
     </main>
   </body>

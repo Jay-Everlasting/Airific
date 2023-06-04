@@ -1,9 +1,55 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : 31 May 2023, 20:40:00
-    Author     : User
-*/
+.header {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 9.6rem;
+}
 
+.menu-icon {
+  height: 4rem;
+  width: 4rem;
+}
+
+.titolo {
+  font-family: "Handlee", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.menu-titolo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.l {
+  border: 0.17rem solid rgba(2, 48, 71, 0.2);
+}
+
+.l1 {
+  width: 80%;
+}
+
+.l2 {
+  width: 60%;
+}
+
+/* HOME PAGE - index.html */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30rem;
+  overflow: hidden;
+}
+
+.home-element {
+  padding-left: 3.2rem;
+}
+
+.home-img {
+  width: 75%;
+}
