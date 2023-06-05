@@ -10,6 +10,7 @@
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
@@ -24,6 +25,16 @@ body {
   max-width: 120rem;
   margin: 0 auto;
   padding: 0 3.2rem;
+}
+
+.btn {
+  width: 20rem;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #12191d;
+  font-size: 2rem;
+  border-radius: 50px;
+  font-weight: 200;
 }
 
 /* 
