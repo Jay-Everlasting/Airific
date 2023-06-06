@@ -1,0 +1,101 @@
+.home-element {
+  top: 50%;
+}
+
+.reg-title {
+  font-size: 5.2rem;
+}
+
+.home-img {
+  position: absolute;
+  left: 45%;
+  top: -3%;
+  width: 40%;
+  scale: 1.5;
+  z-index: -3;
+}
+
+/* FIELDS */
+.inputs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.data1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+  column-gap: 4rem;
+}
+
+.data2 {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field-elements {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-title {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+input {
+  font-size: 2.8rem;
+  border-radius: 10px;
+  background-color: #dff0f8;
+  border: 2px solid #023047;
+  padding-left: 10px;
+}
+
+.field2 {
+  width: 120%;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.4rem;
+}
+
+.btn {
+  padding: 10px 50px;
+}
+
+.btn-reg {
+  background-color: #023047;
+  color: #dff0f8;
+  transition: all 0.3s;
+}
+
+.btn-ann {
+  color: #023047;
+  box-shadow: inset 0px 0px 0px 1px #023047;
+  background-color: #dff0f8;
+  transition: all 0.3s;
+}
+
+.btn-reg:hover {
+  box-shadow: 0px 0px 10px 5px rgba(2, 48, 71, 0.6);
+}
+
+.btn-ann:hover {
+  box-shadow: inset 0px 0px 100px 80px #023047;
+  color: #dff0f8;
+}
