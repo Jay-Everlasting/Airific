@@ -1,0 +1,41 @@
+.rett1 {
+  clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+  top: 0;
+  width: 83%;
+  height: 8rem;
+  background-color: #023047;
+  position: fixed;
+  z-index: -1;
+}
+
+.settings {
+  color: #12191d;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.settings:hover {
+  color: #ffb703;
+}
+
+.icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.menu-titolo {
+  color: #dff0f8;
+}
+
+.rett2 {
+  clip-path: polygon(66.6% 0, 100% 0%, 100% 100%, 0 100%);
+  top: 10%;
+  right: 0;
+  width: 63%;
+  height: 100vh;
+  background-color: #023047;
+  position: fixed;
+  z-index: -1;
+}
