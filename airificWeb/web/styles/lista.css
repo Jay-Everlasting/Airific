@@ -1,3 +1,12 @@
+html {
+  overflow: none;
+}
+
+.header {
+  position: sticky;
+  top: 2.58%;
+}
+
 .rett1 {
   clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
   top: 0;
@@ -37,5 +46,58 @@
   height: 100vh;
   background-color: #023047;
   position: fixed;
-  z-index: -1;
+  z-index: -3;
+}
+
+.list-title {
+  margin-top: 9.6rem;
+  font-size: 3.6rem;
+  margin-bottom: 8rem;
+}
+
+.contenitore {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.contenitore {
+  z-index: -2;
+  position: static;
+}
+
+/* AMBIENTI */
+.ambienti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: cornflowerblue;
+  gap: 5rem;
+}
+
+.ambiente {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: aquamarine;
+  column-gap: 5rem;
+}
+
+.amb {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  grid-column: 1/-1;
+  background-color: darkkhaki;
+}
+
+.linea-amb {
+  border: 2px solid #12191d;
+  width: 100%;
+}
+
+.stanza {
+  padding: 10rem 20rem;
 }
