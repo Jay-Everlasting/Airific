@@ -2,19 +2,23 @@ html {
   overflow: none;
 }
 
+body {
+  margin-bottom: 10rem;
+}
+
 .header {
   position: sticky;
   top: 2.58%;
+  z-index: 1;
 }
 
 .rett1 {
   clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
   top: 0;
   width: 83%;
-  height: 8rem;
+  height: 7.7rem;
   background-color: #023047;
-  position: fixed;
-  z-index: -1;
+  position: absolute;
 }
 
 .settings {
@@ -45,7 +49,7 @@ html {
   width: 63%;
   height: 100vh;
   background-color: #023047;
-  position: fixed;
+  position: static;
   z-index: -3;
 }
 
@@ -71,15 +75,15 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: cornflowerblue;
-  gap: 5rem;
+  gap: 7rem;
 }
 
 .ambiente {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
   column-gap: 5rem;
 }
 
@@ -90,14 +94,42 @@ html {
   align-items: flex-start;
   flex-direction: column;
   grid-column: 1/-1;
-  background-color: darkkhaki;
+  margin-bottom: 0.4rem;
+}
+
+.tit-amb {
+  font-size: 1.6rem;
+  color: rgba(80, 43, 0, 0.4);
 }
 
 .linea-amb {
-  border: 2px solid #12191d;
+  border: 1.5px solid rgba(80, 43, 0, 0.4);
   width: 100%;
 }
 
+.stanze {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
 .stanza {
-  padding: 10rem 20rem;
+  /* padding: 16rem 18rem; */
+  width: 100%;
+  height: 32rem;
+  background-color: #e87c00;
+  border-radius: 40px;
+  position: relative;
+}
+
+.st-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-st {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
