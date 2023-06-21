@@ -11,12 +11,6 @@
   width: 4rem;
 }
 
-.titolo {
-  font-family: "Handlee", sans-serif;
-  font-weight: 300;
-  font-size: 36px;
-}
-
 .menu-titolo {
   display: flex;
   justify-content: center;

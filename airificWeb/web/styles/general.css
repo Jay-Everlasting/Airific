@@ -37,6 +37,12 @@ body {
   cursor: pointer;
 }
 
+.titolo {
+  font-family: "Handlee", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+}
+
 /* 
 --- 01 TYPOGRAPHY SYSTEM
 
