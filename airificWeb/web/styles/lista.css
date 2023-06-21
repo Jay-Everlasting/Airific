@@ -139,8 +139,8 @@ body {
 
 .btn-st {
   position: absolute;
-  bottom: -2rem;
-  right: -5rem;
+  bottom: -1.4rem;
+  right: -2.5rem;
   background: linear-gradient(
     154.46deg,
     rgba(237, 142, 33, 0.75) 17.72%,
@@ -163,4 +163,5 @@ body {
   background: none;
   background-color: rgba(184, 203, 224, 0.801);
   color: #023047;
+  cursor: pointer;
 }
