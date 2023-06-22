@@ -45,18 +45,24 @@
         <div class="dettagli">
           <div class="field-elements elementi">
             <label class="input-title">Quali dati vuoi visualizzare</label>
-            <select name="grafico" class="camera-inputs">
-              <option>CO</option>
-              <option>CO2</option>
-              <option>Azoto</option>
+            <select id="sel-gas" name="grafico" class="camera-inputs">
+              <option value="">--seleziona--</option>
+              <option value="temp">Temperatura</option>
+              <option value="hum">Umidità</option>
+              <option value="co">CO</option>
+              <option value="co2">CO2</option>
+              <option value="tol">Toluen</option>
+              <option value="amm">Ammonio</option>
+              <option value="acet">Acetone</option>
             </select>
           </div>
           <div class="field-elements grafico">
             <label class="input-title">Tipo di grafico</label>
-            <select name="grafico" class="camera-inputs">
-              <option>Torta</option>
-              <option>Barre</option>
-              <option>Cartesiano</option>
+            <select id="sel-grafico" name="grafico" class="camera-inputs">
+              <option value="">--seleziona--</option>
+              <option value="pie">Torta</option>
+              <option value="bar">Barre</option>
+              <option value="line">Linea</option>
             </select>
           </div>
           <div class="field-elements time">
@@ -65,10 +71,8 @@
               type="datetime-local"
               id="meeting-time"
               name="meeting-time"
-              value="2018-06-12T19:30"
-              min="2018-06-07T00:00"
-              max="2018-06-14T00:00"
               class="camera-inputs date-input"
+              id="sel-data-inizio"
             />
           </div>
           <div class="field-elements time">
@@ -77,10 +81,8 @@
               type="datetime-local"
               id="meeting-time"
               name="meeting-time"
-              value="2018-06-12T19:30"
-              min="2018-06-07T00:00"
-              max="2018-06-14T00:00"
               class="camera-inputs date-input"
+              id="sel-data-fine"
             />
           </div>
           <div class="field-elements"></div>
@@ -91,13 +93,17 @@
               class="camera-inputs"
               id="cognome"
               value="GENERA"
+              style="padding: 0"
             />
           </div>
         </div>
       </form>
 
-      <div class="dwl">
-        <button>Download PDF</button>
+      <div class="zona-grafico">
+        <canvas id="myChart"></canvas>
+        <div class="chart-btns">
+          <button class="dwnlPdf">Download PDF</button>
+        </div>
       </div>
 
       <div class="end-img">
@@ -109,5 +115,7 @@
         />
       </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -102,6 +102,51 @@ main {
 }
 
 /* -- STILE SEZIONE GRAFICO -- */
+.zona-grafico {
+  margin: 5rem auto;
+  padding: 10rem 0 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 10rem;
+  background-color: #023047;
+}
+
+#myChart {
+  width: 70%;
+  height: 70%;
+}
+
+.chart-btns {
+  align-self: flex-end;
+  margin-right: 20rem;
+}
+
+.dwnlPdf {
+  width: 22.4rem;
+  height: 6rem;
+  flex-shrink: 0;
+  border-radius: 20px;
+  /* border: 3px solid #023047; */
+  background: #dff0f8;
+  color: #023047;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lolo {
+  color: rgba(223, 240, 248, 0.2);
+}
+
+.dwnlPdf:hover {
+  background: #023047;
+  border: 3px solid #dff0f8;
+  color: #dff0f8;
+}
 
 /* -- Imagine finale -- */
 
