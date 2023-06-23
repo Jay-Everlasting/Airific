@@ -1,0 +1,14 @@
+# 1° SELECT PER EFETTUARE IL LOG IN
+SELECT * FROM (autentificazioni, utenti) WHERE autentificazioni.email='adel.lis@itismattei.net' AND autentificazioni.pswd='theGOAT33' AND autentificazioni.id_utente = utenti.id;
+
+# 2° SELECT PER LA LISTA DELLE STANZE
+SELECT nome FROM ambienti;
+SELECT stanze.id stanze.iconArt, stanze.nome FROM stanze;
+
+# 3° SELECT PER LA STANZA E ANALIS
+SELECT stanze.nome FROM (stanze, analisi) WHERE analisi.id_stanza=stanze.id;
+SELECT stanze.nome, stanze.immagine, analisi.co, analisi.dataA, analisi.timeA FROM (stanze, analisi) WHERE analisi.id_stanza=stanze.id;
+
+# 4° INSERT PER LA REGISTRAZIONE DI UN ACCOUNT
+INSERT INTO utenti(nome, cognome, dataN, telefono) VALUES ("Mirko", "Salazar", "2004-05-25", "3895554123");
+INSERT INTO autentificazioni(email, pswd, id_utente) VALUES ("mirko.salazar@itismattei.net", "nicole||alessia", 4);
