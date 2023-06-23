@@ -172,6 +172,11 @@ main {
     rgba(184, 203, 224, 0.2) 100%
   );
   backdrop-filter: blur(7.5px);
+  transition: all 0.2s;
+}
+
+.camera-rett:hover {
+  backdrop-filter: blur(0);
 }
 
 .camera-img {
