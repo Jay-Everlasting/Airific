@@ -1,0 +1,150 @@
+body {
+  overflow: hidden;
+}
+
+.header {
+  padding: 1.5rem 9.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.menu-icon {
+  height: 4rem;
+  width: 4rem;
+}
+
+.settings {
+  color: #12191d;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.settings:hover {
+  color: #9c7000;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #023047;
+}
+
+.img-login {
+  width: 80%;
+  height: 100vh;
+}
+
+.login-form {
+  position: absolute;
+
+  width: 45rem;
+  height: 50.5rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    157deg,
+    rgba(142, 202, 230, 0.5) 0%,
+    rgba(142, 202, 230, 0.2) 100%
+  );
+  backdrop-filter: blur(5px);
+  top: 50%;
+  transform: translateY(-55%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.tit-login {
+  align-self: flex-start;
+  color: #12191d;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.log-inpt {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.inpt-tit {
+  color: #023047;
+  font-size: 2rem;
+}
+
+.inpt-fld {
+  width: 35rem;
+  height: 5rem;
+  border-radius: 5px;
+  background-color: #dff0f8;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+
+.inpt-1 {
+  border: 3px solid #eec23d;
+}
+
+.inpt-2 {
+  border: 3px solid #2babf8;
+}
+
+.btns {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  width: 17rem;
+  height: 5rem;
+  color: #023047;
+  text-align: center;
+  font-size: 2rem;
+  transition: all 0.2s;
+}
+
+.btn-reg {
+  background-color: #aac8e2;
+  border: 2px solid #29aaf8;
+}
+
+.btn-log {
+  background-color: #c7ddca;
+  border: 2px solid #f0c137;
+}
+
+.btn-reg:hover {
+  background-color: #0266bd;
+  border: 2px solid #0c3249;
+  color: #dff0f8;
+}
+
+.btn-log:hover {
+  background-color: #0fa322;
+  border: 2px solid #4a3c11;
+  color: #dff0f8;
+}

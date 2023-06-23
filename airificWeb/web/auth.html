@@ -1,22 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+    <title>Login to AIRIFIC</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
-    <h1>Login</h1>
-    <!-- <form action="backend/login.jsp" method="post"> -->
-    <form action="lista.html" method="post">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required /><br /><br />
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      /><br /><br />
-      <input type="submit" value="Login" />
-    </form>
+    <header class="header">
+      <div class="menu-titolo">
+        <a href="index.html"><h1 class="titolo">AIRIFC</h1></a>
+      </div>
+      <div class="icone">
+        <a href="index.html">
+          <ion-icon
+            class="menu-icon settings"
+            name="return-down-back-outline"
+          ></ion-icon>
+        </a>
+        <a href="#">
+          <ion-icon
+            class="menu-icon settings"
+            name="settings-outline"
+          ></ion-icon>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="page">
+        <img
+          class="img-login"
+          src="img/web-img/loginImg.png"
+          alt="Imagine di log in"
+        />
+        <div class="login-form">
+          <div>
+            <h2 class="tit-login">Entra nel tuo account 🌬️</h2>
+          </div>
+          <form action="lista.html" method="post">
+            <div class="inputs">
+              <div class="log-inpt">
+                <label class="inpt-tit" for="username">Username:</label>
+                <input
+                  type="text"
+                  id="username"
+                  class="inpt-fld inpt-1"
+                  name="username"
+                  required
+                />
+              </div>
+              <div class="log-inpt">
+                <label class="inpt-tit" for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="inpt-fld inpt-2"
+                  name="password"
+                  required
+                />
+              </div>
+              <div class="btns">
+                <!-- <input class="btn btn-log" type="submit" value="Login" /> -->
+                <a href="registrazione.html" class="btn btn-reg" type="submit"
+                  >Registrati</a
+                >
+                <a class="btn btn-log" type="submit">Login</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

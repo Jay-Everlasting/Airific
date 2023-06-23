@@ -20,6 +20,10 @@ body {
   background-color: #dff0f8;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 120rem;
   margin: 0 auto;
