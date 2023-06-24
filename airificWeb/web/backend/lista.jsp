@@ -26,6 +26,30 @@
         ></script>
     </head>
     <body class="c">
+        <%
+        String user = (String) session.getAttribute("userC");
+        String pswd = (String) session.getAttribute("pswdC");
+            
+        Connection c;
+        Statement s;
+        PreparedStatement p;
+        ResultSet rsA, rsS;
+        String db, schema, utente, psw, select;
+        String ambiente, idS, iconArt, nomeS, nomeU;        
+
+        c = null;
+        db = "127.0.0.1:3306";
+        schema = "airific";
+        utente = "lis";
+        psw = "password1234";
+        nomeU = "";
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver"); 
+            c = DriverManager.getConnection("jdbc:mysql://"+db+"/"+schema, utente, psw);
+            s = c.createStatement();
+            
+        %>
           <div>
             <header class="header">
               <div class="menu-titolo">
@@ -49,29 +73,25 @@
             <div class="rett1"></div>
           </div>
           <main class="contenitore">
-            <h2 class="list-title">Seleziona la stanza che vuoi osservare</h2>
+        <%
+            select = "SELECT utenti.nome FROM (autentificazioni, utenti) "
+                    + "WHERE autentificazioni.email='" + user + "' AND autentificazioni.pswd='" + pswd + "' "
+                    + "AND autentificazioni.id_utente=utenti.id;";
+            p = c.prepareStatement(select);
+            p.execute();
+            rsA = p.getResultSet();
+            while(rsA.next()) {
+                nomeU = rsA.getString("nome");
+            }
+        %>
+            <h2 class="list-title">Seleziona la stanza che vuoi osservare <%= nomeU %> 👇🏼</h2>
             <form action="success.html">
                 <div class="ambienti">
         <%
-        Connection c;
-        Statement s;
-        PreparedStatement p;
-        ResultSet rsA, rsS;
-        String db, schema, utente, psw, select;
-        String ambiente, idS, iconArt, nomeS;        
 
-        c = null;
-        db = "127.0.0.1:3306";
-        schema = "airific";
-        utente = "lis";
-        psw = "password1234";
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver"); 
-            c = DriverManager.getConnection("jdbc:mysql://"+db+"/"+schema, utente, psw);
-            s = c.createStatement();
-
-            select = "SELECT nome FROM ambienti;";
+            select = "SELECT ambienti.nome FROM (ambienti, autentificazioni) "
+            + "WHERE autentificazioni.email='" + user + "' AND autentificazioni.pswd='" + pswd + "' "
+            + "AND autentificazioni.id_utente=ambienti.id_utenti;";
             p = c.prepareStatement(select);
             p.execute();
             rsA = p.getResultSet();
@@ -86,7 +106,9 @@
                     </div>
                     <div class="stanze">
             <%
-                select = "SELECT id, iconArt, nome FROM stanze WHERE id_ambiente='" + ambiente + "';";
+                select = "SELECT stanze.id, stanze.iconArt, stanze.nome FROM (stanze, autentificazioni) "
+                        + "WHERE autentificazioni.email='" + user + "' AND autentificazioni.pswd='" + pswd + "' "
+                        + "AND autentificazioni.id_utente=stanze.id_utente AND stanze.id_ambiente='" + ambiente + "';";
                 p = c.prepareStatement(select);
                 p.execute();
                 rsS = p.getResultSet();
@@ -108,6 +130,11 @@
                 </div>    
                 <%
             }
+            
+            String userC = usr;
+            session.setAttribute("userC", userC);
+            String pswdC = pswd;
+            session.setAttribute("pswdC", pswdC);
 
             c.close();
         } catch (SQLException ex) {

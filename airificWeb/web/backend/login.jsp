@@ -30,20 +30,19 @@
          
         select = "SELECT * FROM autentificazioni WHERE email='" + usr + "' AND pswd='" + pswd + "';";
         p = c.prepareStatement(select);
-        if(p.execute()) {
-            stato = "Eseguito";
-        } else {
-            stato = "Non Eseguito";
-        }
+        p.execute();
             
         rs = p.getResultSet();
             
         if (rs.next()) {
+            String userC = usr;
+            session.setAttribute("userC", userC);
+            String pswdC = pswd;
+            session.setAttribute("pswdC", pswdC);
+            
             response.sendRedirect("lista.jsp");
-            stato = "Successo";
         } else {
             response.sendRedirect("error.html");
-            stato = "Errore";
         }
             
         c.close();

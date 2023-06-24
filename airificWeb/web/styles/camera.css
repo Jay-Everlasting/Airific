@@ -40,6 +40,10 @@ main {
   color: #ffb703;
 }
 
+.i1:hover {
+    cursor: none;
+}
+
 /* -- CSS MAIN -- */
 
 .tit-camera {
