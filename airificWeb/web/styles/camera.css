@@ -95,6 +95,16 @@ main {
   border-radius: 10px;
 }
 
+.btn-input {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-input:hover {
+    box-shadow: inset 100px -100px 100px 100px #023047;
+    color: #dff0f8;
+}
+
 .time {
   flex-direction: row;
   justify-content: start;

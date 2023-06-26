@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *
@@ -15,12 +13,19 @@ import java.sql.Statement;
 public class TestDB {
 
     public static void main(String[] args) {
+        // Database connection details
         Connection c;
-        Statement s;
         PreparedStatement p;
-        ResultSet rsA, rsS;
+        ResultSet rs;
         String db, schema, utente, psw, select;
-        String ambiente, idS, iconArt, nomeS;        
+        String datoStudio, leDate, leOre;
+        String stato = "", prSelect="co";
+        String dateDa, timeDa, dateFino, timeFino;
+        String localBrDa, localBrFino;
+        
+        localBrDa = "2023-03-21T11:12:25";
+        localBrFino = "2023-03-30T18:44:30";
+        
 
         c = null;
         db = "127.0.0.1:3306";
@@ -28,40 +33,44 @@ public class TestDB {
         utente = "lis";
         psw = "password1234";
 
+        //SEPARAZIONE PARAMETRI DATE E ORE
+        dateDa = localBrDa.substring(0, 10);
+        timeDa = localBrDa.substring(11);
+        
+        dateFino = localBrFino.substring(0, 10);
+        timeFino = localBrFino.substring(11);
+        
+        System.out.println("Da: " + dateDa + " " + timeDa + " | Fino: " + dateFino + " " + timeFino);
+        
         try {
-            Class.forName("com.mysql.jdbc.Driver"); 
+            //Class.forName("com.mysql.jdbc.Driver"); 
             c = DriverManager.getConnection("jdbc:mysql://"+db+"/"+schema, utente, psw);
-            s = c.createStatement();
-
-            select = "SELECT nome FROM ambienti;";
+            System.out.println("Connessione fatta");
+          
+            // REQUEST DI DATI PER LA LISTA DI COLONNE
+            select = "SELECT " + prSelect + ", dataA, timeA FROM analisi "
+            + "WHERE id_stanza=1 AND dataA between '" + dateDa + "' AND '" + dateFino + "' "
+            + "AND timeA BETWEEN '" + timeDa + "' AND '" + timeFino + "' "
+            + "ORDER BY dataA ASC;";
             p = c.prepareStatement(select);
             p.execute();
-            rsA = p.getResultSet();
-
-            while (rsA.next()) {
-                ambiente = rsA.getString("nome");
-                //System.out.println("\n" + ambiente);
-                //System.out.println("-----------------------------------------");
-                
-                select = "SELECT id, iconArt, nome FROM stanze WHERE id_ambiente='" + ambiente + "';";
-                p = c.prepareStatement(select);
-                p.execute();
-                rsS = p.getResultSet();
-                while (rsS.next()) {
-                    idS = rsS.getString("id");
-                    iconArt = rsS.getString("iconArt");
-                    nomeS = rsS.getString("nome");
-                    //System.out.println(idS + " | " + iconArt + " | " + nomeS);
-                }
+            System.out.println("Query mandata");
+            
+            rs = p.getResultSet();
+            System.out.println("Result Set presa " + rs);
+            while (rs.next()) {
+                datoStudio = rs.getString(prSelect);
+                leDate = rs.getString("dataA");
+                leOre = rs.getString("timeA");
+                System.out.println(datoStudio + " " + leDate + " " + leOre);
             }
-
+            
             c.close();
-        } catch (SQLException ex) {
-            System.out.println("Errore : " + ex.getMessage());
-        } catch (Exception ex) {
-            System.out.println("Errore : " + ex.getMessage());
-        }
-        
+            } catch (SQLException ex) {
+                System.out.println("Errore SQL: " + ex.getMessage()); 
+            } catch (Exception ex) {
+                System.out.println("Errore : " + ex.getMessage()); 
+            }        
     }
     
 }

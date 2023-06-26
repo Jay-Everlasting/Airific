@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/index.html</file>
+            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/stanza.jsp</file>
             <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/auth.html</file>
-            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/lista.html</file>
-            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/styles/lista.css</file>
+            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/success.jsp</file>
+            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/script.js</file>
             <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/lista.jsp</file>
-            <file>file:/C:/Users/User/Desktop/airific/airificWeb/web/backend/login.jsp</file>
         </group>
     </open-files>
 </project-private>

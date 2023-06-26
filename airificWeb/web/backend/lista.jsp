@@ -24,6 +24,7 @@
             nomodule
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body class="c">
         <%
@@ -85,7 +86,7 @@
             }
         %>
             <h2 class="list-title">Seleziona la stanza che vuoi osservare <%= nomeU %> 👇🏼</h2>
-            <form action="success.html">
+            <form action="stanza.jsp">
                 <div class="ambienti">
         <%
 
@@ -120,7 +121,8 @@
                     <div class="stanza">
                       <%
                       out.print("<img class='st-icon' src='" + iconArt + "' alt='" + nomeS + "'>");
-                      out.print("<input type='submit' class='btn-st' value='" + nomeS + "' name=" + idS + "/>");
+                      out.print("<input type='number' name='stanza13' value='" + idS + "' style='display:none;' > ");
+                      out.print("<input type='submit' class='btn-st' value='" + nomeS + "' name='stanza11'/>");
                       %>
                     </div>
                     <%
@@ -131,10 +133,8 @@
                 <%
             }
             
-            String userC = usr;
-            session.setAttribute("userC", userC);
-            String pswdC = pswd;
-            session.setAttribute("pswdC", pswdC);
+            session.setAttribute("userC", user);
+            session.setAttribute("pswdC", pswd);
 
             c.close();
         } catch (SQLException ex) {
@@ -145,6 +145,6 @@
         %>
                 </div>
             </form>
-          </main>
+        </main>
     </body>
 </html>
